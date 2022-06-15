@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 24px;
+    font-family: sans-serif;
+}
+
+.grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.grid div {
+    background: darkred;
+    min-height: 100px;
+}
+
+.grid div:nth-child(5) {
+    background: darkblue;
+    /* grid-row: span 1;
+    grid-column: span 2; */
+    grid-area: 1 / 1 / 4 / 4;
+}
+
+@media (max-width: 768px) {
+    .grid div:nth-child(5) {
+        grid-column: span 1;
+    }
+}
